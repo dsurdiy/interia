@@ -1,0 +1,66 @@
+.logo {
+   @include kanit;
+   letter-spacing: toRem(7);
+   text-transform: uppercase;
+   transition: color 0.3s;
+   @media (any-hover: hover) {
+      &:hover {
+         color: $secondaryTextColor;
+      }
+   }
+}
+
+.button {
+   min-width: toRem(229);
+   padding: toRem(7) toRem(15);
+   border: toRem(1) solid $secondaryTextColor;
+   border-radius: toRem(100);
+   text-align: center;
+   letter-spacing: toRem(7);
+   text-transform: uppercase;
+   font-family: "Kanit", sans-serif;
+   line-height: 150%;
+   transition: background-color 0.3s;
+   @media (any-hover: hover) {
+      &:hover {
+         background-color: $secondaryTextColor;
+      }
+   }
+}
+
+.top {
+   line-height: 1.5;
+   @media (max-width: toEm($tablet)) {
+      line-height: 1.2;
+   }
+   // .top__sub-title
+   &__sub-title {
+      font-family: "Kanit", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: toRem(7);
+      color: $secondaryTextColor;
+      @media (max-width: toEm($tablet)) {
+         &:not(:last-child) {
+            margin-bottom: toRem(10);
+         }
+      }
+   }
+   // .top__title
+   &__title {
+      font-family: "Kanit", sans-serif;
+      font-size: toRem(40);
+      &:not(:last-child) {
+         margin-bottom: toRem(19);
+         @media (max-width: toEm($mobileSmall)) {
+            margin-bottom: toRem(10);
+         }
+      }
+      @media (max-width: toEm($mobileSmall)) {
+         font-size: toRem(35);
+      }
+   }
+   // .top__text
+   &__text {
+      line-height: 138%;
+   }
+}

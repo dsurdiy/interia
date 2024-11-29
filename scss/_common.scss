@@ -1,0 +1,64 @@
+.wrapper {
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+   overflow: clip;
+   > main {
+      flex: 1 1 auto;
+   }
+}
+
+[class*="__container"] {
+   max-width: toRem(1170);
+   margin: 0 auto;
+   padding-inline: toRem(15);
+}
+
+body {
+   font-family: "Nunito", sans-serif;
+   color: $mainTextColor;
+   background-color: $mainBgColor;
+   // &.menu-open {
+   //    overflow: hidden;
+   //    touch-action: none;
+   //    overscroll-behavior: none;
+   // }
+}
+
+// ---------------- Animation elements -------------
+
+// [data-watch] {
+//    transform: translate(0px, toRem(40));
+//    opacity: 0;
+//    transition: all 0.8s;
+// }
+
+// [data-watch].active {
+//    transform: translate(0px, 0px);
+//    opacity: 1;
+// }
+
+// [data-watch].hero__link {
+//    transition-property: transform, opacity, background-color;
+//    transition-duration: 0.8s, 0.8s, 0.3s;
+//    transition-delay: 0.5s, 0.5s, 0s;
+// }
+
+// [data-watch].hero__text {
+//    transition-delay: 0.3s;
+// }
+
+// [data-watch].blog__body {
+//    transition-delay: 0.5s;
+// }
+
+// [data-watch].about__wrapper {
+//    transition-delay: 0.7s;
+// }
+
+// [data-watch].works__item {
+//    transform: translate(toRem(40), 0px);
+// }
+// [data-watch].works__item.active {
+//    transform: translate(0px, 0px);
+// }
