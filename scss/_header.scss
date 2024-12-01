@@ -1,14 +1,45 @@
 .header {
+   @media (max-width: toEm($mobile)) {
+      &::after {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: -100%;
+         z-index: 1;
+         width: 100%;
+         height: toRem(70);
+         background-color: #000;
+         transition: left 0.5s;
+         .menu-open & {
+            left: 0;
+         }
+      }
+   }
    // .header__container
    &__container {
       min-height: toRem(103);
       display: flex;
       align-items: center;
       column-gap: toRem(55);
+      @media (max-width: toEm($tablet)) {
+         column-gap: toRem(40);
+      }
+      @media (max-width: toEm($mobile)) {
+         min-height: toRem(70);
+         justify-content: space-between;
+      }
+      @media (max-width: toEm($mobileSmall)) {
+         column-gap: toRem(15);
+      }
    }
    // .header__logo
    &__logo {
+      position: relative;
+      z-index: 2;
       flex: 0 0 auto;
+      @media (max-width: toEm(375)) {
+         letter-spacing: toRem(3);
+      }
    }
    // .header__menu
    &__menu {
@@ -16,11 +47,31 @@
    }
    // .header__button
    &__button {
+      position: relative;
+      z-index: 2;
       flex: 0 0 auto;
+      @media (max-width: toEm($tablet)) {
+         min-width: auto;
+         letter-spacing: toRem(2);
+      }
    }
 }
 
 .menu {
+   @media (max-width: toEm($mobile)) {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      padding: toRem(110) toRem(20) toRem(40) toRem(20);
+      background-color: #000;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      transition: left 0.5s;
+      .menu-open & {
+         left: 0;
+      }
+   }
    // .menu__list
    &__list {
       display: flex;
@@ -28,6 +79,12 @@
       justify-content: center;
       column-gap: toRem(55);
       row-gap: toRem(10);
+      @media (max-width: toEm($tablet)) {
+         column-gap: toRem(40);
+      }
+      @media (max-width: toEm($mobile)) {
+         flex-direction: column;
+      }
    }
    // .menu__item
    &__item {
@@ -42,6 +99,55 @@
             color: $secondaryTextColor;
             border-color: inherit;
          }
+      }
+      @media (max-width: toEm($mobile)) {
+         font-size: toRem(26);
+      }
+   }
+}
+
+.menu-icon {
+   display: none;
+   @media (max-width: toEm($mobile)) {
+      display: block;
+      flex: 0 0 toRem(30);
+      width: toRem(30);
+      height: toRem(20);
+      position: relative;
+      z-index: 2;
+   }
+   span,
+   &::before,
+   &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: toRem(2);
+      background-color: #fff;
+      transition: all 0.5s;
+   }
+   span {
+      top: 50%;
+      margin-top: toRem(-1);
+      .menu-open & {
+         transform: scale(0);
+      }
+   }
+   &::before {
+      top: 0;
+      .menu-open & {
+         top: 50%;
+         transform: rotate(45deg);
+         margin-top: toRem(-1);
+      }
+   }
+   &::after {
+      bottom: 0;
+      .menu-open & {
+         bottom: 50%;
+         transform: rotate(-45deg);
+         margin-bottom: toRem(-1);
       }
    }
 }
