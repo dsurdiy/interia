@@ -1,0 +1,99 @@
+.page {
+   // .page__hero
+   &__hero {
+   }
+}
+
+.hero {
+   position: relative;
+   // .hero__image
+   &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+   // .hero__container
+   &__container {
+      position: relative;
+      min-height: 100vh;
+      padding-block: toRem(70);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+   }
+   // .hero__content
+   &__content {
+      max-width: toRem(570);
+      @media (max-width: toEm($mobile)) {
+         margin-left: toRem(20);
+      }
+   }
+   // .hero__top
+   &__top {
+      &:not(:last-child) {
+         margin-bottom: toRem(42);
+         @media (max-width: toEm($mobile)) {
+            margin-bottom: toRem(30);
+         }
+      }
+      .top__title {
+         &:not(:last-child) {
+            margin-bottom: toRem(10);
+         }
+      }
+   }
+   // .hero__link
+   &__link {
+      width: toRem(69);
+      height: toRem(69);
+      border-radius: 50%;
+      transition: background-color 0.3s;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: $secondaryTextColor;
+         }
+      }
+   }
+   // .hero__down
+   &__down {
+      position: absolute;
+      left: 0;
+      bottom: toRem(68);
+      @include kanit;
+      line-height: 150%;
+      letter-spacing: toRem(7);
+      writing-mode: vertical-lr;
+      transform: rotate(-180deg);
+      transition: color 0.5s;
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: 0;
+         right: 100%;
+         height: 0%;
+         width: toRem(2);
+         background-color: $secondaryTextColor;
+         transition: height 0.5s;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            color: $secondaryTextColor;
+            &::after {
+               height: 105%;
+            }
+         }
+      }
+      @media (max-width: toEm($tablet)) {
+         bottom: toRem(25);
+      }
+   }
+}

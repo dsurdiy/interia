@@ -2,6 +2,7 @@
 
 // Чекаємо поки завантажиться сторінка та усі її ресурси
 window.addEventListener("load", windowLoad);
+window.addEventListener("scroll", pageScroll);
 
 function windowLoad() {
    // Відслідковуємо кліки на усій сторінці
@@ -51,6 +52,12 @@ function documentActions(e) {
    //    const currentElement = targetElement.closest("[data-tabs-button]");
    //    setTab(currentElement);
    // }
+}
+
+function pageScroll() {
+   scrollY > 50
+      ? document.querySelector(".header").classList.add("scroll")
+      : document.querySelector(".header").classList.remove("scroll");
 }
 
 

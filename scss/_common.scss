@@ -18,11 +18,11 @@ body {
    font-family: "Nunito", sans-serif;
    color: $mainTextColor;
    background-color: $mainBgColor;
-   // &.menu-open {
-   //    overflow: hidden;
-   //    touch-action: none;
-   //    overscroll-behavior: none;
-   // }
+   &.menu-open {
+      overflow: hidden;
+      touch-action: none;
+      overscroll-behavior: none;
+   }
 }
 
 // ---------------- Animation elements -------------
