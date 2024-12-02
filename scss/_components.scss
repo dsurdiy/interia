@@ -61,6 +61,7 @@
    }
    // .top__text
    &__text {
+      max-width: toRem(513);
       line-height: 138%;
    }
 }

@@ -2,6 +2,22 @@
    // .page__hero
    &__hero {
    }
+   // .page__about
+   &__about {
+      padding-top: toRem(100);
+      padding-bottom: toRem(50);
+      @media (max-width: toEm($mobile)) {
+         padding-top: toRem(70);
+         padding-bottom: toRem(35);
+      }
+   }
+   // .page__hire
+   &__hire {
+      padding: toRem(50) toRem(0);
+      @media (max-width: toEm($mobile)) {
+         padding: toRem(35) toRem(0);
+      }
+   }
 }
 
 .hero {
@@ -95,5 +111,186 @@
       @media (max-width: toEm($tablet)) {
          bottom: toRem(25);
       }
+   }
+}
+
+.about {
+   // .about__container
+   &__container {
+   }
+   // .about__top
+   &__top {
+      &:not(:last-child) {
+         margin-bottom: toRem(75);
+         @media (max-width: toEm($tablet)) {
+            margin-bottom: toRem(50);
+         }
+         @media (max-width: toEm($mobileSmall)) {
+            margin-bottom: toRem(35);
+         }
+      }
+   }
+   // .about__body
+   &__body {
+      display: flex;
+      column-gap: toRem(23);
+      @media (max-width: toEm(840)) {
+         flex-direction: column;
+         row-gap: toRem(40);
+      }
+   }
+   // .about__images
+   &__images {
+      flex: 0 0 toRem(509);
+      display: flex;
+      column-gap: toRem(23);
+      @media (max-width: toEm(840)) {
+         flex: 1 1 auto;
+         overflow-x: auto;
+      }
+   }
+   // .about__image
+   &__image {
+      flex: 1 0 toRem(243);
+      img {
+         width: 100%;
+         aspect-ratio: 243 / 442;
+         object-fit: cover;
+      }
+   }
+   // .about__info
+   &__info {
+   }
+   // .about__top-info
+   &__top-info {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: toRem(20);
+      &:not(:last-child) {
+         margin-bottom: toRem(56);
+         @media (max-width: toEm($tablet)) {
+            margin-bottom: toRem(30);
+         }
+      }
+      @media (max-width: toEm(520)) {
+         justify-content: center;
+      }
+   }
+   // .about__image-info
+   &__image-info {
+      flex: 0 0 toRem(243);
+      img {
+         width: 100%;
+         aspect-ratio: 243 / 243;
+         border-radius: 0 toRem(50) 0 0;
+         object-fit: cover;
+      }
+   }
+   // .about__button
+   &__button {
+   }
+   // .about__statistics
+   &__statistics {
+      padding-left: toRem(40);
+      padding-right: toRem(75);
+      @media (max-width: toEm(1100)) {
+         padding-left: toRem(0);
+         padding-right: toRem(0);
+      }
+   }
+}
+
+.statistics-about {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: toRem(20);
+   @include kanit;
+   @media (max-width: toEm(1100)) {
+      justify-content: flex-start;
+   }
+   @media (max-width: toEm(840)) {
+      column-gap: toRem(70);
+   }
+   @media (max-width: toEm(520)) {
+      justify-content: center;
+      column-gap: toRem(30);
+   }
+   // .statistics-about__item
+   &__item {
+      flex: 0 0 toRem(125);
+   }
+   // .statistics-about__count
+   &__count {
+      font-size: toRem(40);
+      line-height: 150%;
+      color: $secondaryTextColor;
+   }
+   // .statistics-about__title
+   &__title {
+      letter-spacing: toRem(7);
+      line-height: 150%;
+   }
+}
+
+.hire {
+   // .hire__container
+   &__container {
+   }
+   // .hire__body
+   &__body {
+      padding-right: toRem(105);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: toRem(50);
+      background-color: #212828;
+      border-radius: toRem(50) toRem(50) 0 toRem(50);
+      overflow: hidden;
+      @media (max-width: toEm(1100)) {
+         padding-right: toRem(30);
+      }
+      @media (max-width: toEm($mobile)) {
+         flex-direction: column;
+         align-items: flex-start;
+         row-gap: toRem(30);
+         border-radius: toRem(0);
+         padding: toRem(0) toRem(15) toRem(30) toRem(15);
+         margin: 0 toRem(-15);
+      }
+   }
+   // .hire__image
+   &__image {
+      flex: 0 0 toRem(366);
+      height: toRem(318);
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      @media (max-width: toEm($mobile)) {
+         flex: 0 0 auto;
+         width: 100%;
+         margin-left: toRem(-15);
+      }
+   }
+   // .hire__content
+   &__content {
+      flex: 0 1 toRem(520);
+      @media (max-width: toEm($mobile)) {
+         flex: 0 1 auto;
+      }
+   }
+   // .hire__top
+   &__top {
+      &:not(:last-child) {
+         margin-bottom: toRem(29);
+      }
+   }
+   // .hire__button
+   &__button {
+      min-width: toRem(269);
    }
 }
