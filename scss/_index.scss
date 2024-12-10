@@ -25,6 +25,13 @@
          padding: toRem(35) toRem(0);
       }
    }
+   // .page__partners
+   &__partners {
+      padding: toRem(50) toRem(0);
+      @media (max-width: toEm($mobile)) {
+         padding: toRem(35) toRem(0);
+      }
+   }
 }
 
 .hero {
@@ -418,5 +425,27 @@
       line-height: 150%; /* 24/16 */
       letter-spacing: toRem(7);
       text-transform: uppercase;
+   }
+}
+
+.partners {
+   // .partners__container
+   &__container {
+   }
+   // .partners__list
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: toRem(30);
+   }
+   // .partners__item
+   &__item {
+   }
+   // .partners__logo
+   &__logo {
+      max-width: 100%;
+      object-fit: contain;
    }
 }
