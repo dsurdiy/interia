@@ -18,6 +18,13 @@
          padding: toRem(35) toRem(0);
       }
    }
+   // .page__team
+   &__team {
+      padding: toRem(50) toRem(0);
+      @media (max-width: toEm($mobile)) {
+         padding: toRem(35) toRem(0);
+      }
+   }
 }
 
 .hero {
@@ -292,5 +299,124 @@
    // .hire__button
    &__button {
       min-width: toRem(269);
+   }
+}
+
+.team {
+   // .team__container
+   &__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      column-gap: toRem(50);
+      @media (max-width: toEm($mobile)) {
+         flex-direction: column;
+         row-gap: toRem(35);
+      }
+   }
+   // .team__wrapper
+   &__wrapper {
+      flex: 0 1 toRem(440);
+      @media (max-width: toEm($mobile)) {
+         flex: 0 1 auto;
+      }
+   }
+   // .team__top
+   &__top {
+      &:not(:last-child) {
+         margin-bottom: toRem(74);
+         @media (max-width: toEm($mobile)) {
+            margin-bottom: toRem(30);
+         }
+      }
+   }
+   // .team__customers
+   &__customers {
+   }
+   // .team__list
+   &__list {
+      flex: 0 1 toRem(570);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: toRem(22);
+      justify-items: center;
+      align-items: center;
+      @media (max-width: toEm($tablet)) {
+         gap: toRem(15);
+      }
+      @media (max-width: toEm($mobile)) {
+         flex: 0 1 auto;
+      }
+      @media (max-width: toEm($mobileSmall)) {
+         gap: toRem(8);
+      }
+   }
+   // .team__item
+   &__item {
+   }
+   // .team__image
+   &__image {
+      max-width: 100%;
+      aspect-ratio: 274 / 274;
+      object-fit: cover;
+      &--radius {
+         border-radius: 0 0 toRem(50) 0;
+         @media (max-width: toEm($mobile)) {
+            border-radius: 0 0 toRem(70) 0;
+         }
+         @media (max-width: toEm($mobileSmall)) {
+            border-radius: 0 0 toRem(50) 0;
+         }
+      }
+   }
+   // .team__button
+   &__button {
+      min-width: auto;
+   }
+}
+
+.customers {
+   // .customers__photos
+   &__photos {
+      display: flex;
+      flex-wrap: wrap;
+      &:not(:last-child) {
+         margin-bottom: toRem(19);
+      }
+   }
+   // .customers__image
+   &__image {
+      width: toRem(55);
+      height: toRem(55);
+      border-radius: 50%;
+      object-fit: cover;
+      &:not(:first-child) {
+         margin-left: toRem(-15);
+      }
+   }
+   // .customers__reviews
+   &__reviews {
+      display: flex;
+      flex-wrap: wrap;
+      gap: toRem(8);
+      &:not(:last-child) {
+         margin-bottom: toRem(11);
+      }
+   }
+   // .customers__stars
+   &__stars {
+      img {
+         width: toRem(16);
+         height: toRem(16);
+         object-fit: contain;
+      }
+   }
+   // .customers__label
+   &__label {
+      @include kanit;
+      color: $secondaryTextColor;
+      line-height: 150%; /* 24/16 */
+      letter-spacing: toRem(7);
+      text-transform: uppercase;
    }
 }
