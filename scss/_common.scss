@@ -15,7 +15,7 @@
 }
 
 body {
-   font-family: "Nunito", sans-serif;
+   @include nunito;
    color: $mainTextColor;
    background-color: $mainBgColor;
    &.menu-open {
