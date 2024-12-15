@@ -31,14 +31,11 @@
       @media (max-width: toEm($mobile)) {
          padding: toRem(50) toRem(0);
       }
-      @media (max-width: toEm($mobile)) {
-         padding: toRem(50) toRem(0);
-      }
    }
    // .page__services
    &__services {
       padding: toRem(100) toRem(0);
-      @media (max-width: toEm($mobile)) {
+      @media (max-width: toEm($tablet)) {
          padding: toRem(70) toRem(0);
       }
       @media (max-width: toEm($mobile)) {
@@ -51,12 +48,15 @@
    // .page__blog
    &__blog {
       padding: toRem(100) toRem(0);
-      @media (max-width: toEm($mobile)) {
+      @media (max-width: toEm($tablet)) {
          padding: toRem(70) toRem(0);
       }
       @media (max-width: toEm($mobile)) {
          padding: toRem(50) toRem(0);
       }
+   }
+   // .page__subscribe
+   &__subscribe {
    }
 }
 
@@ -650,5 +650,59 @@
    // .item-blog__link-more
    &__link-more {
       @extend .services__link-more;
+   }
+}
+
+.subscribe {
+   // .subscribe__container
+   &__container {
+   }
+   // .subscribe__body
+   &__body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: toRem(50);
+      row-gap: toRem(35);
+      padding-block: toRem(75);
+      border-top: toRem(1) solid #212828;
+      @media (max-width: toEm($pc)) {
+         justify-content: center;
+      }
+      @media (max-width: toEm($mobile)) {
+         padding-block: toRem(50);
+      }
+   }
+   // .subscribe__top
+   &__top {
+   }
+   // .subscribe__form
+   &__form {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: toRem(24);
+      row-gap: toRem(35);
+      justify-content: center;
+   }
+   // .subscribe__input
+   &__input {
+      min-width: toRem(512);
+      padding: toRem(0) toRem(27);
+      background-color: transparent;
+      border-bottom: toRem(1) solid $secondaryTextColor;
+      color: $mainTextColor;
+      &::placeholder {
+         color: inherit;
+         @media (max-width: toEm($mobile)) {
+            text-align: center;
+         }
+      }
+      @media (max-width: toEm($mobile)) {
+         min-width: toRem(290);
+      }
+   }
+   // .subscribe__button
+   &__button {
    }
 }
