@@ -66,18 +66,20 @@
 }
 
 .menu {
-   @media (max-width: toEm($mobile)) {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      padding: toRem(110) toRem(20) toRem(40) toRem(20);
-      background-color: #000;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      transition: left 0.5s;
-      .menu-open & {
-         left: 0;
+   &.header__menu {
+      @media (max-width: toEm($mobile)) {
+         position: fixed;
+         top: 0;
+         left: -100%;
+         padding: toRem(110) toRem(20) toRem(40) toRem(20);
+         background-color: #000;
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+         transition: left 0.5s;
+         .menu-open & {
+            left: 0;
+         }
       }
    }
    // .menu__list
@@ -91,7 +93,9 @@
          column-gap: toRem(40);
       }
       @media (max-width: toEm($mobile)) {
-         flex-direction: column;
+         .header__menu & {
+            flex-direction: column;
+         }
       }
    }
    // .menu__item
@@ -109,7 +113,9 @@
          }
       }
       @media (max-width: toEm($mobile)) {
-         font-size: toRem(26);
+         .header__menu & {
+            font-size: toRem(26);
+         }
       }
    }
 }
