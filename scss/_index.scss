@@ -74,7 +74,7 @@
    // .hero__container
    &__container {
       position: relative;
-      min-height: 100vh;
+      min-height: 100dvh;
       padding-block: toRem(70);
       display: flex;
       flex-direction: column;
