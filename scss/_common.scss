@@ -27,16 +27,47 @@ body {
 
 // ---------------- Animation elements -------------
 
-// [data-watch] {
-//    transform: translate(0px, toRem(40));
-//    opacity: 0;
-//    transition: all 0.8s;
-// }
+[data-watch] {
+   transform: translate(toRem(50), 0px);
+   opacity: 0;
+   transition: all 0.8s;
+}
+[data-watch].active {
+   transform: translate(0px, 0px);
+   opacity: 1;
+}
 
-// [data-watch].active {
-//    transform: translate(0px, 0px);
-//    opacity: 1;
-// }
+[data-watch].hero__image {
+   transform: translate(toRem(200), 0px);
+   transition-duration: 1.5s;
+}
+[data-watch].hero__image.active {
+   transform: translate(0px, 0px);
+}
+
+[data-watch].top__title {
+   transition-delay: 1s;
+}
+
+[data-watch].top__text {
+   transition-delay: 1.3s;
+}
+
+[data-watch].hero__link {
+   transition-property: transform, opacity, background-color;
+   transition-duration: 0.8s, 0.8s, 0.3s;
+   transition-delay: 1.5s, 1.5s, 0s;
+}
+
+[data-watch].hero__down {
+   transform: translate(0px, toRem(-70)) rotate(-180deg);
+   transition-property: transform, opacity, color;
+   transition-duration: 0.8s, 0.8s, 0.3s;
+   transition-delay: 2.3s, 2.3s, 0s;
+}
+[data-watch].hero__down.active {
+   transform: translate(0px, 0px) rotate(-180deg);
+}
 
 // [data-watch].hero__link {
 //    transition-property: transform, opacity, background-color;
