@@ -50,7 +50,7 @@ const options = {
 }
 const callback = (entries) => {
    entries.forEach(entry => {
-      entry.isIntersecting ? entry.target.classList.add("active") : entry.target.classList.remove("active");
+      entry.isIntersecting ? entry.target.classList.add("active") : null;
    });
 }
 const observer = new IntersectionObserver(callback, options);
